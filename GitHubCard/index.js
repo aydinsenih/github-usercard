@@ -97,6 +97,7 @@ function cardMaker(data){
   const followers = document.createElement("p");
   const Following = document.createElement("p");
   const bio = document.createElement("p");
+  const profileText = document.createElement("span");
 
   card.appendChild(img);
   card.appendChild(cardInfo);
@@ -104,6 +105,7 @@ function cardMaker(data){
   cardInfo.appendChild(username);
   cardInfo.appendChild(loc);
   cardInfo.appendChild(profile);
+  profile.appendChild(profileText);
   profile.appendChild(link);
   cardInfo.appendChild(followers);
   cardInfo.appendChild(Following);
@@ -118,7 +120,8 @@ function cardMaker(data){
   name.textContent = data.name;
   username.textContent = data.login;
   loc.textContent = "Location: "+ data.location;
-  profile.textContent = "Profile: ";
+  profileText.textContent = "Profile: ";
+  link.href = data.html_url;
   link.textContent = data.html_url;
   followers.textContent = "Followers: " + data.followers;
   Following.textContent = "Following: " + data.following;
